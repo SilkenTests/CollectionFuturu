@@ -1,0 +1,16 @@
+-Requestly:
+https://app.requestly.io/rules/editor/edit/Response_evjf8
+ -- Request redirect: If request url contains api.at - redirect to nirvana
+
+ -- Modify API Response: If request ur contains: https://api-dev.at/deskfinder/test/api/Admin/PAR7/getReportFor
+
+Response Status Code dynmaic:
+
+function modifyResponse(args) {
+
+  const {method, url, response, responseType, requestHeaders, requestData, responseJSON} = args;
+
+  // Change response below depending upon request attributes received in args
+  var responseData = [];
+
+  for (var i = 0; i < 62; i++) {
