@@ -1,0 +1,37 @@
+Österreichische Post AG | www.post.at
+Firmensitz: Wien | Firmenbuchnummer: 180219d | Firmenbuchgericht: Handelsgericht Wien | UID: ATU 46674503 DVR: 1008803
+
+Seite 27/52
+
+9.3 Testfalldesign für die Automatisierung
+Im Testfalldesign wird durch die Verwendung von Testautomatisierungspatterns bereits früh 
+auf die Wartbarkeit und Wiederverwendbarkeit der Testautomatisierungslösungen geachtet.
+Folgende Patterns werden implementiert:
+• Keyword-driven: Ein Keyword bzw. Schlüsselwort bezeichnet die Zusammenfassung 
+mehrerer fachlicher Aktionen in einer Methode. Durch die Sammlung von Schlüsselwörtern 
+können diese in Testfällen beliebig verwendet werden. Es wird somit eine Art Baukasten 
+aufgebaut, aus dem man sich bei der Testfallerstellung je nach funktionaler Anforderung 
+bedienen kann.
+• Data – driven: Der data driven Ansatz verfolgt das Ziel, mehrere Kombinationen von Daten 
+mit demselben Testfall durchzuführen. Dadurch muss nicht pro Testdatenkombination ein 
+Testfall erzeugt werden, sondern die Testdaten werden dem Testfall von außen 
+übergeben. Pro Testdaten Konstellation erfolgt eine Testdurchführung.
+• Arrange, Act, Assert: Das arrange-act-assert-Pattern bietet eine Möglichkeit zur 
+Strukturierung von Testfällen. Dabei bedeutet „arrange“ alle nötigen Vorbereitungsschritte 
+die für die eigentliche Testdurchführung nötig sind. „Act“ wiederum bezeichnet die 
+tatsächliche Aktion, den tatsächlichen Test und „assert“ bedeutet die Überprüfung, sozusagen die Verifikation des Testziels. Eine Gliederung im Testfall nach diesen drei 
+Schritten, bedeutet eine vereinfachte Lesbarkeit und fördert den Wiedererkennungswert 
+der Testfälle innerhalb des Projektcodes.
+• Page Object: Ein Page Object ist die Abstraktion eines zusammenhängenden Teils der zu 
+testenden Applikation. Darin werden alle relevanten Interaktionsmöglichkeiten mit diesem 
+Teil der Applikation als Methoden abgebildet. Ein Page Object kann somit eine Sammlung 
+an Keywords für einen bestimmten Teil einer Applikation beinhalten.
+• Data Provider: Ein Data Provider kümmert sich um die Bereitstellung der notwendigen 
+Testdaten für einen Testfall oder einen gesamten Testlauf. Da Testdaten nicht direkt im 
+Testfall verwaltet werden sollen, wird ein Data Provider implementiert, welcher diese 
+Funktion übernimmt.
+• Client: Ein Client ist die tatsächliche Implementierung der Interaktion mit dem Testobjekt. 
+Dabei werden die Aktionen des bereits erwähnten Page Objects mit dem jeweiligen 
+Automatisierungswerkzeug implementiert. Im Falle der POST AG ist dies ein Seleniumund Appium-Client, diverse WebService-Clients (REST, SOAP) und ein WinAppDriverClient. Die Implementierung der Interaktion als Client gibt eine einfachere Möglichkeit zum 
+Tausch der Automatisierungswerkzeuge ohne den gesamten Testautomatisierungscode 
+zu verli
