@@ -1,9 +1,6 @@
-Österreichische Post AG | www.post.at
-Firmensitz: Wien | Firmenbuchnummer: 180219d | Firmenbuchgericht: Handelsgericht Wien | UID: ATU 46674503 DVR: 1008803
 
-Seite 27/52
 
-9.3 Testfalldesign für die Automatisierung
+- Testfalldesign für die Automatisierung
 Im Testfalldesign wird durch die Verwendung von Testautomatisierungspatterns bereits früh 
 auf die Wartbarkeit und Wiederverwendbarkeit der Testautomatisierungslösungen geachtet.
 Folgende Patterns werden implementiert:
