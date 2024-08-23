@@ -1,1 +1,381 @@
-to do
+Richtlinie Testing
+
+wip
+
+	
+
+Richtlinie für Software Testing
+
+1	Dokumenteninformation
+Beschreibung
+Beschreibung	Version	Gültig ab	Autor	Gültigkeitsbereich
+Richtlinie für Software Testing 
+
+Aktualisierung
+Verantwortlich für Aktualisierung	Aktualisierungsperiod
+
+Ansprechpartner
+
+Inhalt
+1	Dokumenteninformation	2
+2	Einleitung	6
+3	Geltungsbereich	6
+3.1	Geltungsbereich	6
+3.2	Geltungsbereich auch für externe Dritte	6
+4	Ziele	6
+5	Inhalt	6
+5.1	Agiles Testen in der Acredia	6
+5.2	Verantwortlichkeiten im Agilen Team	6
+6	Teststrategie	6
+7	Dokumentation in Jira	7
+7.1	Testfälle	7
+7.1.1	Verlinkung:	7
+7.1.2	Titel:	7
+7.1.3	Affected Application	8
+7.1.4	Labels/Stichwörter:	8
+7.1.5	Komponente	9
+7.1.6	Automation Status	9
+7.1.7	Testschritte	9
+7.1.8	Priorisierung der Testfälle	9
+7.2	Testausführungen	9
+7.3	Testpläne	10
+7.4	Testsets	10
+8	Testen beginnt in der Entwicklung:	10
+9	Manuelles Testing	11
+10	Automatisierung von Regressionstests:	11
+11	Pipelines/Umgebungen …	12
+12	Messen und Überwachen:	12
+12.1	Testabdeckung:	12
+12.2	Bug-Tracking:	12
+12.3	Testdurchführungsstatus der automatisierten Tests:	12
+12.4	KPIs für Testqualität:	12
+13	Trendanalyse:	13
+13.1	Schlüsselkennzahlen:	13
+13.2	Kontinuierliches Monitoring:	13
+14	Definition von Fehlern (Bugs) und Bug-Reporting:	13
+14.1	Zusammenfassung	14
+14.2	Fehlerhaftes Verhalten:	14
+14.3	Erwartetes Verhalten	14
+14.4	Priorität	14
+14.5	Affected Application	14
+14.6	Akzeptanzkriterien	14
+14.7	Reproduktionsschritte	15
+14.8	Umgebungsinformationen:	15
+14.9	Bildschirmfotos oder Videos:	15
+15	Security Testing, Last Tests, Load Test usw.	15
+16	Begriffsdefinitionen	15
+17	Verantwortlichkeiten	15
+18	Abkürzungsverzeichnis	15
+19	Anhang	16
+19.1	Rechtliche Grundlagen	16
+19.2	Literaturverzeichnis	16
+19.3	Glossar	16
+19.4	Zusammenhängende Dokumente	16
+
+ 
+2	Einleitung 
+Unser Ziel ist es, exzellente Software für unsere Kundinnen zu erstellen.
+Diese Richtlinie enthält Werte und Instrumente, um die Qualität von Software festzustellen, zu dokumentieren und zu verbessern.
+Als Basis gelten die agilen Prinzipien. Wir nutzen die klaren Vorteile von agilem Testen, wie frühere Rückkopplungsschleifen und dadurch reduzierte Kosten für Fehlerbehebung. 
+
+3	Geltungsbereich
+3.1	Geltungsbereich
+1) Diese Richtlinie gilt für 
+
+3.2	 Geltungsbereich auch für externe Dritte
+Diese Richtlinie soll auch für externe Dritte (z.B. Subunternehmer oder sonstige von ACREDIA beauftragte Dienstleister) gelten, soweit sie für und/oder im Namen von ACREDIA tätig werden. Die Geltung dieser Vorschriften wird mit den externen Dritten explizit vereinbart.
+
+4	Ziele
+Eine Richtlinie für Software Testing
+Vorgaben für Arbeit in der IT
+Klarstellungen innerhalb 
+Testen =! Abnahmen.
+
+
+5	Warum
+5.1	 Agiles Testen
+
+Verschiedene Projekte, verschiedene Systeme, Testkonzept anpassen und flexibel ändern, lebendes Dokument, Vorlage definieren für Testkonzept das für weitere Projekte verwendet werden kann.
+Selbst in Wasserfallprojekten – agile Ansätze finden und ausprobieren.
+
+5.2	 Verantwortlichkeiten
+
+Agiles Testen ist ein Teameffort, Austausch regelmäßig, Scrum Events.
+Fachbereich in Form von Abnahmen der Anforderungen und Bux Fixes mitverantwortlich.
+Testen =! Abnahmen.
+Definieren TODO
+
+6	Teststrategie
+
+Unsere herangezogene Teststrategie ist Test nach Risiko, d.h. wo besonders hoher Schaden entstehen könnte, testen wir so lange und so ausführlich wie möglich.
+Die Testfälle dazu dokumentieren wir und bewerten sie nach Priorität. Die Testfälle beschreiben die Applikation(en) und die Priorität definiert ihre Relevanz.
+
+Auch beim Erstellen eines neuen Features, macht es Sinn, so viel wie notwendig zu testen.
+
+Ein happy-path Testing ist nicht ausreichend, um ein Fehlverhalten aufzudecken, da der happy-path keine realistische Verwendung der Software darstellt. 
+
+Ein zusätzlicher Negativ Fall zum happy-path kann eine ausreichende Testabdeckung sein.
+
+Im besten Fall werden noch zusätzliche Szenarios in Testfällen festgehalten und zur User Story oder zum Bug verlinkt.
+
+7	Testen beginnt in der Entwicklung:
+
+Unit Testing - IT Entwicklung - Confluence (atlassian.net) 
+ Unit Testing:
+Ermutigen Sie Entwickler, neben ihrem Code Unittests zu schreiben, um die Funktionalität einzelner Komponenten zu überprüfen. Diese Tests sollten automatisiert und regelmäßig als Teil des Entwicklungsworkflows ausgeführt werden. 
+
+- Code-Qualitätsüberwachung:
+Nutzen Sie Tools wie SonarQube, um die Code-Qualität zu analysieren, potenzielle Probleme zu identifizieren und den Codeabdeckungsgrad zu verfolgen. Überprüfen Sie regelmäßig die SonarQube-Berichte, um die Codegesundheit aufrechtzuerhalten und etwaige Probleme zeitnah anzugehen. 
+
+- Smoke Tests: 
+EntwicklerInnen führen Smoke-Tests auf der Alpha Umgebung durch bevor eine User Story oder ein Bug in den Status „ready for test“ geschoben wird. Um nach jeder Code-Änderung die grundlegende Funktionalität und Integration zu überprüfen. Diese Tests helfen, Integrationsprobleme frühzeitig im Entwicklungsprozess zu erkennen. 
+
+-Exploratives Testen:
+Bei größeren Änderungen …
+
+
+8	Manuelles Testen
+
+9.1. Definition 
+Manuelles Testen ist die Basis, nämlich das Ausprobieren der umgesetzten User Story entweder auf der UI oder im Backend.
+Es gibt verschiedene Ansätze, etwa das Explorative Testen, wo verschiedene Möglichkeiten ohne klaren Ablauf ausprobiert werden. Bei größeren User Stories oder neuen Features kann dies einen Überblick geben, welche Testfälle zu erstellen sind.
+Weiters ist der happy path ein klassischer Testfall, der überprüft, ob die Anforderung umgesetzt wurde.
+
+9.2 Dokumentation
+Die Testschritte im Testfall sind ein Drehbuch für die Ausführung des Tests aber auch eine Dokumentation des Verhaltens der Software.
+
+9.3 Nachhaltigkeit
+Die Erstellung von Testfällen macht nur Sinn, wenn ich sie wiederverwenden kann. Entweder für die Regression oder für künftige Änderungen an der Software usw.
+Um Tests wiederzufinden befüllen wir Felder am Testfall und fügen ihn zu einem Testset hinzu.
+Folgend Beispiele für sinnvolle Testset: Regression Set, Backend Tests, Kandidat für UAT, nach Modulen, Kafka Tests, … 
+
+9.4 Tools für manuelles Testing
+Folgende eine Liste an Tools für manuelles Testing:
+Postman – Collection für API’s erstellen und mit dem Team teilen
+Swagger – manuell API’s testen
+Soap UI – Testing von SOAP API‘s
+Requestly – Requests faken
+
+9	 Automatisiertes Testen
+
+All things uipath hier 
+
+@attila
+
+Regressionstest-Suiten:
+Entwickeln Sie umfassende Regressionstest-Suiten, die kritische Funktionalitäten und Randfälle abdecken. Automatisieren Sie diese Tests, um schnelle und zuverlässige Durchführung während der Regressionstestzyklen zu ermöglichen. 
+
+- Release-Tests:
+Nutzen Sie dieselben Regressionstest-Suiten für Release-Tests, um die Stabilität und Integrität der Software vor der Bereitstellung zu validieren. Dadurch wird sichergestellt, dass neue Funktionen keine Regressionen in der vorhandenen Funktionalität einführen. 
+
+
+•	Trigger Deployment: Automatisierte Smoketests im Deployment, wenn alle grün, dann erst Regressionsset nach Risikobewertung ausführen
+
+•	Healthcheck Smoketests schon auf Alpha Umgebung möglich als Hinweis an Entwickler?
+
+•	Trigger nächtlich: auf Testumgebung Regressionsset, Ergebnis in eigenem 
+JIRA- Dashboard darstellen
+
+
+10	 Testing in Jira
+
+Folgende Vorgehensweisen legen wir für die Arbeit in Jira fest:
+
+10.1	 Testfälle
+
+10.1.1	Verlinkung:
+
+Zu jeder User Story und jeden Bug soll mindesten ein Testfall verknüpft sein.
+Wenn es sich zum Beispiel um eine Analyse User Story handelt, ist dies nicht nötig und wird mittels Stichwort „not_test_relevant“ die User Story entsprechend markiert.
+
+Diese Information fließt in die Testabdeckung ein.
+
+
+10.1.2	Titel:
+
+Der Testfall enthält im Titel in eckiger Klammer die zugehörige Komponente.
+
+Wird im Testfall ein Verhalten NICHT erwartet, ist zur leichteren Leserlichkeit das NICHT in Großbuchstaben geschrieben.
+
+Im Zweifelsfall lieber mehr als weniger Testfälle anlegen, um die Wiederverwendbarkeit zu erhöhen.
+
+Daher auch erst nach einem bestehenden Testfall suchen, bevor ein neuer erstellt wird.
+
+Info: Eine Umgebungsinfo ist nur in Testfallausführung anzugeben. Der Testfall soll für alle Umgebungen wiederverwendbar sein.
+
+
+10.1.3	Affected Application
+
+Unbedingt ist die Affected Application anzugeben.
+
+Damit können wir Testfälle zu Testsets und -plänen zuordnen.
+
+
+10.1.4	Labels/Stichwörter:
+
+Alle weiteren Labels für andere Zwecken schreiben wir so:
+Kafka, Regression, UAT;
+
+Weitere Labels für Testfälle werden gemeinsam im Testing Team definiert.
+
+
+10.1.5	Komponente
+
+Welche Komponente wird getestet. 
+
+10.1.6	Automation Status
+
+Jeder Testfall soll entweder automatisierbar sein, bereits automatisiert sein oder nicht automatisierbar sein.
+
+10.1.7	Testschritte
+
+Die Testschritte sind das Drehbuch für die Testausführung.
+Grundsätzlich soll jeder Schritt, der für die Erreichung des Ergebnisses nötig ist, einzeln formuliert werden.
+In der Acredia haben wir komplexe Abläufe, also hier Hausverstand walten lassen. 
+Als Anspruch gilt, jede Person soll den Testfall anhand der Testschritte ausführen können.
+
+10.1.8	Priorisierung der Testfälle
+
+Es gibt folgende Felder…
+Wir befüllen Risk Level…
+
+Bei einem Regressionstest ist das Risk Level zu definieren.
+
+10.2	Testausführungen
+
+Testausführungen werden immer erstellt, wenn ein Testfall ausgeführt wird.
+Jeder Testschritt in einem Testfall kann zu einem Defekt führen, der ebendort erstellt wird.
+Beweise (Screenshots) können bei Sinnhaftigkeit verknüpft werden.
+Hausverstand walten lassen (wird es sich jemals jemand wieder ansehen?).
+
+
+10.3	Testpläne
+
+Wunschkonzert: je Sprint definieren, im/nach dem Sprint Planning mit Testfällen befüllen.
+UAT: Testpläne für Fachbereiche definieren und daraus Ausführungsliste erstellen die Personen zugeordnet werden können.
+
+10.4	Testsets
+
+Testsets für Regression, Module, Kafka, Backend, was macht noch Sinn? -> um Testfälle wiederverwendbar zu machen und auch wiederzufinden.
+
+Testsets werden mittels Labels/Stichwörtern an Testfällen erstellt.
+
+11	 Pipelines/Umgebungen …
+
+Wo laufen welche Tests, bzw. wo wird was getestet.
+Wann laufen wo Test automatisiert.
+-Täglich auf Testumgebung.
+-Bei Release auf Testumgebung.
+
+Vorgaben für Testumgebung -> Testing/Branching Konzept Inhalt hier
+
+12	 Messen und Überwachen:
+
+Das Dashboard sollte folgende Elemente enthalten:
+
+12.1	Testabdeckung:
+Visualisierung der Testabdeckung, einschließlich des Prozentsatzes der abgedeckten Codezeilen, Funktionen oder Anwendungsfälle.
+Von den erledigten User Stories und Bugs wurden % mit einem Testfall verknüpft und sind daher mit einem Test abgedeckt. Mindestens ein Testfall pro US.
+Allgemein: Ist ein Test von Seiten Testmanagement nicht möglich oder nicht sinnvoll wird der User Story ein Tag "not_test_relevant" gegeben.
+
+12.2	Bug-Tracking:
+Anzeige der Anzahl offener, geschlossener und neu gemeldeter Fehler. Dies kann nach Priorität, Schweregrad oder Status kategorisiert werden.
+
+12.3	Testdurchführungsstatus der automatisierten Tests:
+Anzeige des Fortschritts bei der Ausführung von Testfällen, einschließlich der Anzahl abgeschlossener, ausstehender und fehlgeschlagener Tests.
+
+12.4	KPIs für Testqualität:
+Messung von KPIs wie Testeffizienz, Teststabilität und Durchlaufzeit von Testzyklen.
+
+
+13	 Trendanalyse:
+
+Verlauf der Testabdeckung, Fehlerentwicklung und Testdurchführung über einen bestimmten Zeitraum hinweg, um Trends zu identifizieren und Verbesserungen zu erkennen. Ein gut gestaltetes Berichterstattungs- und KPI-Dashboard ermöglicht es dem Team, den Testfortschritt zu verfolgen, Engpässe zu identifizieren und die Teststrategie kontinuierlich zu verbessern.
+
+
+13.1	 Schlüsselkennzahlen:
+Definieren und verfolgen Sie wichtige Kennzahlen im Zusammenhang mit dem Testen, wie Code-Abdeckung, Fehlerdichte, Testdurchführungszeit und Testergebnisse. Verwenden Sie diese Kennzahlen, um die Effektivität der Testbemühungen zu bewerten und Verbesserungsbereiche zu identifizieren.
+
+13.2	 Kontinuierliches Monitoring:
+Überwachen Sie kontinuierlich Testergebnisse, Code-Qualitätskennzahlen und SonarQube-Berichte, um Trends und Muster zu erkennen. Gehen Sie proaktiv auf etwaige Probleme oder Abweichungen ein, um hohe Qualitätsstandards während des gesamten Entwicklungszyklus aufrechtzuerhalten. 
+
+
+14	 Definition von Fehlern (Bugs) und Bug-Reporting:
+
+Ein Fehler oder Bug ist eine Abweichung vom erwarteten Verhalten der Software, die zu unerwünschten Ergebnissen führt. Bug-Reports sollten detaillierte Informationen enthalten, um das Problem klar zu beschreiben und seine Reproduktion zu ermöglichen.
+
+ToDo: Unterschied Defects/Bugs? Definieren!
+
+Bei der Erstellung von Bugs in Jira ist es relevant zuerst das zugehörige Projekt auszuwählen.
+Aktuell haben wir das „ACS Projekt“ und das „ACT Projekt“.
+Betrifft der Bug ein Verhalten in ACS ist ebendieses zu wählen, betrifft der Bug ein Verhalten in der ACT, dann das ACT Projekt im DropDown auswählen.
+
+Existiert ein Testfall, der das Verhalten überprüft, kann dieser bereits zum Bug verlinkt werden.
+Verlinkung: Bug is tested by Testcase
+
+Die folgenden Felder befüllen wir im Issuetype Defect in Jira: 
+
+14.1	Zusammenfassung
+Eine präzise Beschreibung des beobachteten Verhaltens, das vom erwarteten abweicht.
+Für die schnelle Erkennbarkeit das Wort „Bug“ als erstes im Titel, anschließend die Affected Application, dann das falsche Verhalten.
+
+Beispiel: „Bug [IRP-Sync] Policy Sync wird nicht geloggt“
+
+14.2	Fehlerhaftes Verhalten:
+Beschreibung des tatsächlichen Verhaltens der Software, das vom erwarteten abweicht.
+
+14.3	Erwartetes Verhalten
+Eine klare Angabe dessen, was stattdessen erwartet wurde, um den Fehler zu beheben.
+
+14.4	Priorität
+
+Folgende Möglichkeiten im DropDown vorhanden:
+Schwerwiegend	Außenwirkung auf Versicherungsnehmer
+Kritisch	Showstopper, ein Weiterarbeiten ist nicht möglich
+Hoch	Absturz, Blocker
+Mittel	Funktionaler Fehler mit vorhandenem Work Around
+Niedrig	ein kosmetischer Fehler, hat keine Auswirkung auf das Verhalten der Software
+
+14.5	Affected Application
+
+Welcher Applikation ist vom Defekt betroffen. Siehe Auswahlmöglichkeiten bei User Story.
+
+14.6	Akzeptanzkriterien
+
+Hier wiederholt sich das erwartete Verhalten und eventuelle zusätzliche Erwartungen, die weiterhin erfüllt werden sollen.
+
+Zusätzliche wertvolle Informationen die im Defekt formuliert werden können:
+
+14.7	Reproduktionsschritte
+Klare Schritte, die den EntwicklerInnen und TesterInnen ermöglichen, den Fehler zu reproduzieren und zu diagnostizieren.
+Dies kann beinhalten: - Welche Aktionen wurden ausgeführt, um den Fehler zu verursachen? - Welche Daten wurden verwendet? - In welchem Zustand befand sich die Software?
+
+14.8	Umgebungs¬informationen:
+Informationen über die Umgebung, in der der Fehler auftrat, einschließlich Betriebssystem, Browser-Version (falls zutreffend), Gerätetyp und andere relevante Details wenn relevant.
+
+14.9	Bildschirmfotos oder Videos:
+Grafische Darstellung des Fehlers, um die Diagnose zu erleichtern und das Verständnis zu verbessern. 
+
+
+15	 Security Testing, Last Tests, Load Test usw.
+
+kaufen wir zu von Profis bei Bedarf –> Vorgehen relevant für ISO 27001 und Dora @Irene
+
+Security Test einführen -> Pen Tests – Regelmäßig? Wann? Usw. @Dominik Pressl
+
+
+
+16	 Begriffsdefinitionen
+
+17	 Verantwortlichkeiten
+
+18	 Abkürzungsverzeichnis
+
+19	 Anhang
+19.1	Rechtliche Grundlagen
+19.2	Literaturverzeichnis
+19.3	Glossar
+19.4	Zusammenhängende Dokumente
+
+
+
